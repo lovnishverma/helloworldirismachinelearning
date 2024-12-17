@@ -17,7 +17,6 @@ def page():
     pheight = float(request.form.get("pheight"))
 
     # Load the Iris dataset from CSV (use the path to your local CSV file or URL)
-    # Example URL: "https://raw.githubusercontent.com/lovnishverma/datasets/main/iris.csv"
     url = "https://raw.githubusercontent.com/lovnishverma/datasets/main/iris.csv"
     data = pd.read_csv(url)  # Don't Set header=None if there is header row present in the CSV
     
@@ -32,9 +31,8 @@ def page():
     # Make a prediction based on the user input
     arr = model.predict([[swidth, sheight, pwidth, pheight]])
 
-    # Map the predicted numeric label to the flower name
-    flower_names = ['Iris-setosa', 'Iris-versicolor', 'Iris-virginica']
-    predicted_flower = flower_names[arr[0]]
+    # The prediction is already a string representing the flower name
+    predicted_flower = arr[0]  # Directly use the predicted label
 
     return render_template("index.html", data=str(predicted_flower))
 

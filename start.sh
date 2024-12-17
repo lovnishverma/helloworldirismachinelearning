@@ -1,1 +1,1 @@
-python fromcsv.py
+python fromurl.py
