@@ -1,1 +1,1 @@
-python server.py
+python fromcsv.py

@@ -1,107 +1,46 @@
 <html>
   <title>Iris Flower Prediction</title>
-  <head>
-    <style>
-  body{
-    
-    background-color:floralwhite
-  }
-  
- div{
-    color : #cd5c5c;
-    text-align: center;
-    font-style: oblique;
-    font-weight: bold;
-    box-shadow: 10px 10px 5px #808080;
-    animation: bounce 2s infinite;
-  }
-@keyframes bounce {
-0% {
-transform: translateY(0);
-}
-25% {
-transform: translateY(-20px);
-}
-50% {
-transform: translateY(0);
-}
-75% {
-transform: translateY(20px);
-}
-100% {
-transform: translateY(0);
-}
-}  h2{
-    color: #cd5c5c;
-    text-align: center;
-  }
-  </style>
-  </head>
-<body>
+  <body>
 
-<form action="/irisf" method="POST">
-  <table class="table table-striped trans" align="center">
-    
-    <div class="row">
-    <tr align="center">
-       <div class="col-sm-6">
-         <td><label for="swidth" class="form-label">Sepal Width</label></td></div>
-        <div class="col-sm-6">
-          <td><input type="text" name="swidth" placeholder="Enter width of Sepal" required></td></div>
-    </tr>
-    <tr align="center">
-        <div class="col-sm-6">
-          <td><label for="sheight" class="form-label">Sepal Height</label></td></div>
-        <div class="col-sm-6">
-          <td><input type="text" name="sheight" placeholder="Enter height of Sepal" required></td></div>
-    </tr>
-    <tr align="center">
-        <div class="col-sm-6">
-          <td><label for="pwidth" class="form-label">Petal Width</label></td></div>
-        <div class="col-sm-6">
-          <td><input type="text" name="pwidth" placeholder="Enter width of Petal" required></td></div>
-    </tr>
-    <tr align="center">
-        <div class="col-sm-6">
-          <td><label for="pheight" class="form-label">Petal Height</label></td></div>
-        <div class="col-sm-6">
-          <td><input type="text" name="pheight" placeholder="Enter height of Petal" required></td></div>
-    </tr>
-    
-    <tr>
-    <td colspan="2" align="center">
-      <input type="submit" value="Predict Flower Type">
-      <input type="reset" value="Clear">
-    </td>
-    </tr>
-    </div>
-  </table>
-  
-</form>
+    <form action="/irisf" method="POST">
+      <table align="center">
+        <tr>
+          <td><label for="swidth" class="form-label">Sepal Width</label></td>
+          <td><input type="text" name="swidth" placeholder="Enter width of Sepal" required></td>
+        </tr>
+        <tr>
+          <td><label for="sheight" class="form-label">Sepal Height</label></td>
+          <td><input type="text" name="sheight" placeholder="Enter height of Sepal" required></td>
+        </tr>
+        <tr>
+          <td><label for="pwidth" class="form-label">Petal Width</label></td>
+          <td><input type="text" name="pwidth" placeholder="Enter width of Petal" required></td>
+        </tr>
+        <tr>
+          <td><label for="pheight" class="form-label">Petal Height</label></td>
+          <td><input type="text" name="pheight" placeholder="Enter height of Petal" required></td>
+        </tr>
+        <tr>
+          <td colspan="2" align="center">
+            <input type="submit" value="Predict Flower Type">
+            <input type="reset" value="Clear">
+          </td>
+        </tr>
+      </table>
+    </form>
 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+    <div align="center">The Flower Name is: </div>
+    <div align="center"> {{data}} </div>
 
-
-     <div> The Flower Name is: </div>
-     <div align="center"> {{data}} </div>
-     <center>
-     {% if data=="Iris-setosa" %}
+    <center>
+      {% if data=="Iris-setosa" %}
         <img src="https://cdn.glitch.global/8599b2d2-58ab-4d42-98f5-97fa4c6bad04/Iris%20Setosa.png?v=1680866840563" alt="IRIS SETOSA" width="200" height="200">
-     {% elif data=="Iris-versicolor" %}
+      {% elif data=="Iris-versicolor" %}
         <img src="https://cdn.glitch.global/8599b2d2-58ab-4d42-98f5-97fa4c6bad04/Iris%20versicolor.png?v=1680866854461" alt="IRIS VERSICOLOR" width="200" height="200">
-     {% elif data=="Iris-virginica" %}
+      {% elif data=="Iris-virginica" %}
         <img src="https://cdn.glitch.global/8599b2d2-58ab-4d42-98f5-97fa4c6bad04/Iris%20Virginica.png?v=1680866857022" alt="IRIS VIRGINICA" width="200" height="200">
-     {% endif %}
-     </center>
+      {% endif %}
+    </center>
 
-</body>
+  </body>
 </html>
