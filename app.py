@@ -2,6 +2,7 @@ from flask import *
 import numpy as np
 import pandas as pd
 from sklearn.linear_model import LogisticRegression
+from sklearn import datasets
 
 app = Flask(__name__)
 
@@ -9,6 +10,12 @@ app = Flask(__name__)
 url = "https://raw.githubusercontent.com/lovnishverma/datasets/main/iris.csv"
 data = pd.read_csv(url, header=None)
 flower = data.values
+
+
+# Step : Load the Iris dataset from sklearn
+# iris = datasets.load_iris()
+# x = iris.data  # Features (sepal length, sepal width, petal length, petal width)
+# y = iris.target  # Labels (species)
 
 # Split the data into features and target labels
 x = flower[:, :-1]
