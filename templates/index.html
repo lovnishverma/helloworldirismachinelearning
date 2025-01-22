@@ -1,46 +1,76 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Iris Flower Prediction</title>
-  <body>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    table {
+      border-spacing: 10px;
+    }
+    td {
+      padding: 5px;
+    }
+    form {
+      margin-bottom: 20px;
+    }
+    .result {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .flower-image img {
+      margin-top: 20px;
+      border: 2px solid #ddd;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
 
-    <form action="/irisf" method="POST">
-      <table align="center">
-        <tr>
-          <td><label for="swidth" class="form-label">Sepal Width</label></td>
-          <td><input type="text" name="swidth" placeholder="Enter width of Sepal" required></td>
-        </tr>
-        <tr>
-          <td><label for="sheight" class="form-label">Sepal Height</label></td>
-          <td><input type="text" name="sheight" placeholder="Enter height of Sepal" required></td>
-        </tr>
-        <tr>
-          <td><label for="pwidth" class="form-label">Petal Width</label></td>
-          <td><input type="text" name="pwidth" placeholder="Enter width of Petal" required></td>
-        </tr>
-        <tr>
-          <td><label for="pheight" class="form-label">Petal Height</label></td>
-          <td><input type="text" name="pheight" placeholder="Enter height of Petal" required></td>
-        </tr>
-        <tr>
-          <td colspan="2" align="center">
-            <input type="submit" value="Predict Flower Type">
-            <input type="reset" value="Clear">
-          </td>
-        </tr>
-      </table>
-    </form>
+  <form action="/irisf" method="POST">
+    <table align="center">
+      <tr>
+        <td><label for="swidth">Sepal Width</label></td>
+        <td><input type="text" name="swidth" placeholder="Enter width of Sepal" required></td>
+      </tr>
+      <tr>
+        <td><label for="sheight">Sepal Height</label></td>
+        <td><input type="text" name="sheight" placeholder="Enter height of Sepal" required></td>
+      </tr>
+      <tr>
+        <td><label for="pwidth">Petal Width</label></td>
+        <td><input type="text" name="pwidth" placeholder="Enter width of Petal" required></td>
+      </tr>
+      <tr>
+        <td><label for="pheight">Petal Height</label></td>
+        <td><input type="text" name="pheight" placeholder="Enter height of Petal" required></td>
+      </tr>
+      <tr>
+        <td colspan="2" align="center">
+          <input type="submit" value="Predict Flower Type">
+          <input type="reset" value="Clear">
+        </td>
+      </tr>
+    </table>
+  </form>
 
-    <div align="center">The Flower Name is: </div>
-    <div align="center"> {{data}} </div>
+  <div class="result" align="center">
+    The Flower Name is: {{ data }}
+  </div>
 
-    <center>
-      {% if data=="Iris-setosa" %}
-        <img src="https://cdn.glitch.global/8599b2d2-58ab-4d42-98f5-97fa4c6bad04/Iris%20Setosa.png?v=1680866840563" alt="IRIS SETOSA" width="200" height="200">
-      {% elif data=="Iris-versicolor" %}
-        <img src="https://cdn.glitch.global/8599b2d2-58ab-4d42-98f5-97fa4c6bad04/Iris%20versicolor.png?v=1680866854461" alt="IRIS VERSICOLOR" width="200" height="200">
-      {% elif data=="Iris-virginica" %}
-        <img src="https://cdn.glitch.global/8599b2d2-58ab-4d42-98f5-97fa4c6bad04/Iris%20Virginica.png?v=1680866857022" alt="IRIS VIRGINICA" width="200" height="200">
-      {% endif %}
-    </center>
+  <div class="flower-image" align="center">
+    {% if data == "setosa" %}
+      <img src="https://cdn.glitch.global/8599b2d2-58ab-4d42-98f5-97fa4c6bad04/Iris%20Setosa.png?v=1680866840563" alt="Iris Setosa" width="200" height="200">
+    {% elif data == "versicolor" %}
+      <img src="https://cdn.glitch.global/8599b2d2-58ab-4d42-98f5-97fa4c6bad04/Iris%20versicolor.png?v=1680866854461" alt="Iris Versicolor" width="200" height="200">
+    {% elif data == "virginica" %}
+      <img src="https://cdn.glitch.global/8599b2d2-58ab-4d42-98f5-97fa4c6bad04/Iris%20Virginica.png?v=1680866857022" alt="Iris Virginica" width="200" height="200">
+    {% endif %}
+  </div>
 
-  </body>
+</body>
 </html>
