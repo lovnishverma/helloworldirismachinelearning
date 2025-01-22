@@ -1,9 +1,29 @@
-from flask import Flask, render_template, request
+from flask import *
 import numpy as np
-from sklearn import datasets
+import pandas as pd
 from sklearn.linear_model import LogisticRegression
+from sklearn import datasets
 
 app = Flask(__name__)
+
+# Load and train the model when the app starts
+url = "https://raw.githubusercontent.com/lovnishverma/datasets/main/iris.csv"
+data = pd.read_csv(url, header=None)
+flower = data.values
+
+
+# Step : Load the Iris dataset from sklearn
+# iris = datasets.load_iris()
+# x = iris.data  # Features (sepal length, sepal width, petal length, petal width)
+# y = iris.target  # Labels (species)
+
+# Split the data into features and target labels
+x = flower[:, :-1]
+y = flower[:, -1]
+
+# Train the model
+model = LogisticRegression()
+model.fit(x, y)
 
 @app.route('/')
 def iris():
@@ -16,23 +36,11 @@ def page():
     sheight = float(request.form.get("sheight"))
     pwidth = float(request.form.get("pwidth"))
     pheight = float(request.form.get("pheight"))
-  
-    # Step : Load the Iris dataset from sklearn
-    iris = datasets.load_iris()
-    x = iris.data  # Features (sepal length, sepal width, petal length, petal width)
-    y = iris.target  # Labels (species)
-
-    # Initialize the model and train it
-    model = LogisticRegression(max_iter=200)
-    model.fit(x, y)
-  
-    # Make prediction using the model
+    
+    # Make a prediction based on the user input
     arr = model.predict([[swidth, sheight, pwidth, pheight]])
-    predicted_flower = iris.target_names[arr[0]]  # Map numeric label to species name
 
-    return render_template("index.html", data=predicted_flower)  # Pass the flower name
-
-
+    return render_template("index.html", data=str(arr[0]))
 
 if __name__ == '__main__':
     app.run()
