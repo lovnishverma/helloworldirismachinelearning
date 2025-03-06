@@ -1,6 +1,6 @@
-#scikit-learn automatically handles string labels in classification problems, but not for categorical features.  
+### scikit-learn automatically handles string labels in classification problems, but not for categorical features.
 
-#Why does this work?
+### How does this work?
 - In model.fit(features, labels), the labels (y) are string values (e.g., "setosa", "versicolor", "virginica").
 - *Scikit-learn automatically encodes string labels* internally using LabelEncoder when training classification models like LogisticRegression.  
 - However, this does *not* apply to categorical features (i.e., independent variables X), which must still be manually encoded.
