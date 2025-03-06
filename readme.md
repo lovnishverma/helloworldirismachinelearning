@@ -69,7 +69,7 @@ To deploy the app on Glitch:
 2. Click **New Project** → **Import from GitHub**
 3. Paste your repository URL: `https://github.com/lovnishverma/helloworldirismachinelearning`
 4. Wait for the installation to complete.
-5. Click **Show Live** to access your app!
+5. Click **Preview - Open in a new window** to access your app!
 
 ## 📷 Screenshot
 
