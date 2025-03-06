@@ -1,5 +1,4 @@
 from flask import Flask, render_template, request  # Flask modules
-import numpy as np
 import pandas as pd
 from sklearn.linear_model import LogisticRegression
 from sklearn.preprocessing import LabelEncoder
