@@ -7,7 +7,7 @@ from sklearn.preprocessing import LabelEncoder
 app = Flask(__name__)
 
 # Load and preprocess the dataset
-dataset = "iris.csv"  # Ensure this file exists and is correctly formatted
+dataset = "iris.csv"  # Ensure this file exists
 data = pd.read_csv(dataset, header=None)
 
 # Extract features (X) and labels (y)
