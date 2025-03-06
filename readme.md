@@ -2,6 +2,9 @@
 
 This is a simple **Flask-based machine learning web application** that predicts the **species of an Iris flower** based on user inputs. The model is trained using **Logistic Regression** and deployed on **Glitch.com**.
 
+## 🎥 Youtube Tutorial (Hindi)
+[Click here view youtube video!](https://youtu.be/DlCdQ1MZXsc?si=ACw7zrwmCLGsYNVp)
+
 ## 🌐 Live Demo
 [Click here to try the app!](https://irismachinelearning.glitch.me/)
 
