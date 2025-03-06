@@ -1,7 +1,7 @@
 # Logistic Regression vs. Linear Regression
 
 ## Introduction
-This repository provides an overview of **Logistic Regression** and **Linear Regression**, explaining their differences, use cases, and how they work in machine learning.
+This file provides an overview of **Logistic Regression** and **Linear Regression**, explaining their differences, use cases, and how they work in machine learning.
 
 ## 1. What is Logistic Regression?
 Logistic Regression is a **classification algorithm** used to predict categorical outcomes. Despite its name, it is not used for regression but rather for classification tasks.
