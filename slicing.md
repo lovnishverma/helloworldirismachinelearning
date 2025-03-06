@@ -72,4 +72,63 @@ flower = np.array([
 
 
 
+### **1️⃣ Using `iloc` with Pandas**
+```python
+X = data.iloc[:, :-1].values  # All columns except the last one (features)
+y = data.iloc[:, -1].values   # The last column (target labels)
+```
+✅ **What This Does:**
+- `data` is a **Pandas DataFrame** (from `pd.read_csv("iris.csv")`).
+- `.iloc[:, :-1]` selects **all rows (`:`) and all columns except the last one (`:-1`)** → Feature matrix (`X`).
+- `.iloc[:, -1]` selects **all rows and only the last column (`-1`)** → Target labels (`y`).
+- `.values` converts the selected portion into a **NumPy array**.
+
+🔹 **Why Use This?**  
+- Works **only when `data` is a Pandas DataFrame**.
+- Preserves column indexing and flexibility of Pandas.
+
+---
+
+### **2️⃣ Direct NumPy Indexing**
+```python
+x = flower[:, :-1]
+y = flower[:, -1]
+```
+✅ **What This Does:**
+- `flower` is a **NumPy array**.
+- `[:, :-1]` selects **all rows and all columns except the last one** → Feature matrix (`x`).
+- `[:, -1]` selects **all rows and only the last column** → Target labels (`y`).
+
+🔹 **Why Use This?**  
+- Works **only when `flower` is already a NumPy array**.
+- More **efficient and faster** than Pandas for numerical operations.
+- **Cannot** be used directly with a DataFrame (would cause an error).
+
+---
+
+### **Key Differences**
+| Feature          | Pandas (`iloc`)                 | NumPy (`:` slicing)          |
+|-----------------|---------------------------------|------------------------------|
+| Input Type      | Pandas DataFrame (`data`)      | NumPy array (`flower`)       |
+| Output Type     | NumPy array (`.values` used)   | NumPy array (default)        |
+| Flexibility     | Can handle mixed data types    | Best for numerical data      |
+| Speed          | Slightly slower for large data | Faster for numerical ops     |
+| Readability    | More readable (`iloc` syntax)  | More concise (`:` slicing)   |
+
+---
+
+### **When to Use Which?**
+- If your dataset is a **Pandas DataFrame**, use:
+  ```python
+  X = data.iloc[:, :-1].values  
+  y = data.iloc[:, -1].values  
+  ```
+- If your dataset is already a **NumPy array**, use:
+  ```python
+  x = flower[:, :-1]  
+  y = flower[:, -1]  
+  ```
+
+
+
 
