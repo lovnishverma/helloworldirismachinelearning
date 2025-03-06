@@ -1,3 +1,25 @@
+### **How does Pandas use NumPy?**
+1. **DataFrames & Series use NumPy arrays internally**  
+   - Every column in a Pandas `DataFrame` is stored as a NumPy array.
+   - A `Series` is essentially a wrapper around a NumPy array.
+
+2. **`.values` returns a NumPy array**  
+   ```python
+   import pandas as pd
+   data = pd.DataFrame({"A": [1, 2, 3], "B": [4, 5, 6]})
+   print(type(data.values))  # <class 'numpy.ndarray'>
+   ```
+   - The `values` attribute **converts a DataFrame into a NumPy array**.
+
+3. **Pandas operations are optimized using NumPy**  
+   - Many Pandas functions rely on NumPy functions internally.
+   - Example: `df.mean()`, `df.sum()`, and `df.apply()` use NumPy functions.
+
+### **Do you need to import NumPy when using Pandas?**
+❌ **No, you don’t need to explicitly import NumPy unless you’re using NumPy-specific operations** like `np.array()`, `np.dot()`, or `np.reshape()`.  
+✅ If you're just working with Pandas, you can rely on its built-in NumPy support.
+
+
 ### **In this code, NumPy (`numpy`) is used in the following way:**
 
 ### **1️⃣ NumPy for Feature Extraction**
