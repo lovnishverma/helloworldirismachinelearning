@@ -20,6 +20,7 @@ This is a simple **Flask-based machine learning web application** that predicts 
 - [Scaling](https://github.com/lovnishverma/helloworldirismachinelearning/blob/master/scaling.md)
 - [Slicing](https://github.com/lovnishverma/helloworldirismachinelearning/blob/master/slicing.md)
 - [Readme](https://github.com/lovnishverma/helloworldirismachinelearning/blob/master/readme.md)
+- [DataCleaningGuide](https://github.com/lovnishverma/helloworldirismachinelearning/blob/master/DataCleaningGuide.md)
 
 ## 🛠️ Technologies Used
 - **Flask** (Web Framework)
