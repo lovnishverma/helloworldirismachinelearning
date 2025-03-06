@@ -77,7 +77,7 @@ Feel free to contribute to this project! You can fork the repo, create a new bra
 - **Flask** for making web deployment easy.
 - **Glitch** for providing free hosting.
 
-##***Future Enhancements for This Project 🎯* **
+# *Future Enhancements for This Project 🎯*
 
 This Flask-based *Iris Flower Classification* project can be improved further with the following enhancements:  
 
