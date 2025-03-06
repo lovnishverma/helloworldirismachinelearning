@@ -18,10 +18,9 @@ Logistic Regression is a **classification algorithm** used to predict categorica
 - **Iris flower classification**: Classify a flower into three species (`setosa`, `versicolor`, `virginica`).
 
 ### Logistic Regression Formula:
-\[
-P = \frac{1}{1 + e^{-z}}
-\]
-where \( z = w_1x_1 + w_2x_2 + ... + w_nx_n + b \).
+
+<img width="370" alt="logistic" src="https://github.com/user-attachments/assets/719fd750-965c-4cd0-9a1a-7dd89efdfbe3" />
+
 
 ## 2. What is Linear Regression?
 Linear Regression is a **regression algorithm** used to predict **continuous numerical values**.
@@ -37,13 +36,9 @@ Linear Regression is a **regression algorithm** used to predict **continuous num
 - **Stock Price Forecasting**: Predict future stock prices.
 
 ### Linear Regression Formula:
-\[
-Y = mX + b
-\]
-For multiple features:
-\[
-Y = w_1x_1 + w_2x_2 + ... + w_nx_n + b
-\]
+
+![Linear-regression-model-equation](https://github.com/user-attachments/assets/3a44f8fb-cf3b-47ce-8125-8f912d036ea3)
+
 
 ## 3. Key Differences
 | Feature  | Linear Regression | Logistic Regression |
