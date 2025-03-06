@@ -33,6 +33,7 @@ Here, the mapping might be:
 - ❌ Not recommended for categorical **features** (`X`)—for those, **One-Hot Encoding** is usually better to avoid misleading ordinal relationships.
 
 
+So, you're using LabelEncoder correctly for the Iris dataset's target variable (y), but avoid using it for categorical features (X) in general. 
 
 ### 🤔 **Why Not Use Label Encoding for Categorical Features?**
 `LabelEncoder` assigns **integer values** to categories, but it can cause problems when used for **categorical features** (like `"color": ["red", "green", "blue"]`). Here's why:
