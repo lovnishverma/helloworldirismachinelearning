@@ -1,75 +1,78 @@
-### The Code
+# Iris Machine Learning Web App
 
-```python
-x = flower[:, :-1]
-y = flower[:, -1]
-```
+This is a simple **Flask-based machine learning web application** that predicts the **species of an Iris flower** based on user inputs. The model is trained using **Logistic Regression** and deployed on **Glitch.com**.
 
-### Assumptions
+## 🌐 Live Demo
+[Click here to try the app!](https://irismachinelearning.glitch.me/)
 
-- `flower` is a **NumPy array** (commonly used in Python for numerical computations).
-- It has rows and columns, where:
-  - Each **row** represents a sample (e.g., data about a flower).
-  - Each **column** represents a feature (e.g., petal length, petal width, etc.).
+## 📂 Project Links
+- **Glitch Project:** [Glitch Editor](https://glitch.com/edit/#!/irismachinelearning)
+- **GitHub Repository:** [GitHub](https://github.com/lovnishverma/helloworldirismachinelearning)
 
----
+## 🛠️ Technologies Used
+- **Flask** (Web Framework)
+- **Scikit-Learn** (Machine Learning Model)
+- **Pandas & NumPy** (Data Processing)
+- **HTML & Jinja2** (Frontend Template Engine)
+- **Glitch.com** (Free Deployment Platform)
 
-### What the Code Does
+## 📌 Features
+✅ Train and deploy a **Logistic Regression** model for Iris species classification.  
+✅ Simple web interface to input flower measurements.  
+✅ Real-time predictions displayed on the web page.  
+✅ Deployed on **Glitch** for easy access.  
 
-1. **Slicing the Features (`x`)**
+## 📦 Installation & Setup
+To run this project locally, follow these steps:
 
-   ```python
-   x = flower[:, :-1]
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/lovnishverma/helloworldirismachinelearning.git
+   cd helloworldirismachinelearning
    ```
 
-   - `:` (colon): Selects **all rows**.
-   - `:-1`: Selects **all columns except the last one**.
-   - Result: `x` contains all the feature columns (e.g., attributes of the flower).
-
-2. **Slicing the Target Labels (`y`)**
-   ```python
-   y = flower[:, -1]
+2. **Create a virtual environment (optional but recommended):**
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows use: venv\Scripts\activate
    ```
-   - `:` (colon): Selects **all rows**.
-   - `-1`: Selects the **last column** only.
-   - Result: `y` contains the target labels (e.g., the flower species).
+
+3. **Install dependencies:**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. **Run the Flask app:**
+   ```bash
+   python app.py
+   ```
+
+5. **Access the web app locally:**
+   Open a browser and go to `http://127.0.0.1:5000/`
+
+## 🚀 Deployment on Glitch
+To deploy the app on Glitch:
+1. Go to [Glitch.com](https://glitch.com/)
+2. Click **New Project** → **Import from GitHub**
+3. Paste your repository URL: `https://github.com/lovnishverma/helloworldirismachinelearning`
+4. Wait for the installation to complete.
+5. Click **Show Live** to access your app!
+
+## 📷 Screenshot
+
+![image](https://github.com/user-attachments/assets/0ab1debe-9dc7-4be2-a281-e52023a76dde)
+
+
+## 📜 License
+This project is licensed under the **MIT License**.
+
+## 🤝 Contributing
+Feel free to contribute to this project! You can fork the repo, create a new branch, and submit a pull request.
+
+## ✨ Acknowledgments
+- **Scikit-Learn** for the ML model.
+- **Flask** for making web deployment easy.
+- **Glitch** for providing free hosting.
 
 ---
-
-### Example
-
-#### Given `flower` (a 2D NumPy array):
-
-```python
-flower = np.array([
-    [5.1, 3.5, 1.4, 0.2, 0],
-    [4.9, 3.0, 1.4, 0.2, 0],
-    [6.3, 3.3, 6.0, 2.5, 2]
-])
-```
-
-#### Splitting Data:
-
-- `x = flower[:, :-1]`:
-
-  ```python
-  x = [
-      [5.1, 3.5, 1.4, 0.2],
-      [4.9, 3.0, 1.4, 0.2],
-      [6.3, 3.3, 6.0, 2.5]
-  ]
-  ```
-
-- `y = flower[:, -1]`:
-  ```python
-  y = [0, 0, 2]
-  ```
-
-#### Explanation:
-
-- `x` contains the features: petal and sepal measurements.
-- `y` contains the labels: flower species (e.g., 0, 1, 2).
-
-
-
-
+Made with ❤️ by [Lovnish Verma](https://github.com/lovnishverma/) 🚀
