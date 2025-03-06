@@ -12,6 +12,15 @@ This is a simple **Flask-based machine learning web application** that predicts 
 - **Glitch Project:** [Glitch Editor](https://glitch.com/edit/#!/irismachinelearning)
 - **GitHub Repository:** [GitHub](https://github.com/lovnishverma/helloworldirismachinelearning)
 
+### **Additional Documentation**
+- [Logistic Regression vs. Linear Regression](https://github.com/lovnishverma/helloworldirismachinelearning/blob/master/Logistic%20Regression%20vs.%20Linear%20Regression.md)
+- [Encoding](https://github.com/lovnishverma/helloworldirismachinelearning/blob/master/encoding.md)
+- [NumPy](https://github.com/lovnishverma/helloworldirismachinelearning/blob/master/numpy.md)
+- [Pandas](https://github.com/lovnishverma/helloworldirismachinelearning/blob/master/pandas.md)
+- [Scaling](https://github.com/lovnishverma/helloworldirismachinelearning/blob/master/scaling.md)
+- [Slicing](https://github.com/lovnishverma/helloworldirismachinelearning/blob/master/slicing.md)
+- [Readme](https://github.com/lovnishverma/helloworldirismachinelearning/blob/master/readme.md)
+
 ## 🛠️ Technologies Used
 - **Flask** (Web Framework)
 - **Scikit-Learn** (Machine Learning Model)
@@ -65,7 +74,6 @@ To deploy the app on Glitch:
 
 ![image](https://github.com/user-attachments/assets/0ab1debe-9dc7-4be2-a281-e52023a76dde)
 
-
 ## 📜 License
 This project is licensed under the **MIT License**.
 
@@ -110,3 +118,4 @@ Currently, the model is trained on the entire dataset, which is *not a good prac
 
 ---
 👉 Made with ❤️ by [Lovnish Verma](https://github.com/lovnishverma/) 🚀
+
