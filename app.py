@@ -1,49 +1,47 @@
-from flask import *  # Import Flask and related modules to build a web application
-import numpy as np  # Import NumPy for numerical operations
-import pandas as pd  # Import pandas for data manipulation
-from sklearn.linear_model import LogisticRegression  # Import Logistic Regression model from scikit-learn
+from flask import Flask, render_template, request  # Flask modules
+import numpy as np
+import pandas as pd
+from sklearn.linear_model import LogisticRegression
+from sklearn.preprocessing import LabelEncoder
 
-# Initialize the Flask application
 app = Flask(__name__)
 
-# Load and train the model when the app starts
-# Dataset containing information about Iris flowers
-dataset = "iris.csv"  # Path to the CSV file with Iris data
-data = pd.read_csv(dataset, header=None)  # Read the CSV file without assuming column headers
-flower = data.values  # Convert the dataset into a NumPy array for easier processing
+# Load and preprocess the dataset
+dataset = "iris.csv"  # Ensure this file exists and is correctly formatted
+data = pd.read_csv(dataset, header=None)
 
-# Split the dataset into features (x) and target labels (y)
-features = flower[:, :-1]  # All columns except the last one are the input features
-labels = flower[:, -1]  # The last column contains the target labels (flower species)
+# Extract features (X) and labels (y)
+X = data.iloc[:, :-1].values  # All columns except the last one (features)
+y = data.iloc[:, -1].values   # The last column (target labels)
 
-# Train the Logistic Regression model
-model = LogisticRegression()  # Create an instance of the Logistic Regression model
-model.fit(features, labels)  # Train the model using the features and corresponding target labels
+# Encode labels because they are strings
+label_encoder = LabelEncoder()
+y = label_encoder.fit_transform(y)  # Converts labels like "Iris-setosa" to numbers
+
+# Train Logistic Regression model
+model = LogisticRegression(solver="liblinear")  # Using liblinear for small datasets
+model.fit(X, y)
 
 @app.route('/')
-def iris():
-   
-    # Render the main page with the form to input flower dimensions.
-   
-    return render_template("index.html")  # Display the input form on the main page
+def home():
+    return render_template("index.html")
 
 @app.route('/irisf', methods=["POST"])
-def page():
-    
-    # Handle form submission, predict flower type, and display the result.
-   
-    # Extract input values from the form submitted by the user
-    swidth = float(request.form.get("swidth"))  # Get Sepal Width from the form
-    sheight = float(request.form.get("sheight"))  # Get Sepal Height from the form
-    pwidth = float(request.form.get("pwidth"))  # Get Petal Width from the form
-    pheight = float(request.form.get("pheight"))  # Get Petal Height from the form
+def predict():
+    try:
+        # Extract input values and convert them to floats
+        swidth = float(request.form.get("swidth"))
+        sheight = float(request.form.get("sheight"))
+        pwidth = float(request.form.get("pwidth"))
+        pheight = float(request.form.get("pheight"))
 
-    # Predict the flower type using the trained model
-    # The input values are passed as a 2D array since the model expects this format
-    arr = model.predict([[swidth, sheight, pwidth, pheight]])
+        # Predict flower type
+        prediction = model.predict([[swidth, sheight, pwidth, pheight]])
+        flower_name = label_encoder.inverse_transform(prediction)[0]  # Convert number back to label
 
-    # Render the main page again with the predicted flower type displayed
-    return render_template("index.html", data=str(arr[0]))
+        return render_template("index.html", data=flower_name)
+    except ValueError:
+        return render_template("index.html", data="Invalid input! Please enter numbers.")
 
 if __name__ == '__main__':
-    app.run()  # Start the Flask application and make it accessible
+    app.run(debug=True)  # Enable debug mode for development
