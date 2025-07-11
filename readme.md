@@ -6,10 +6,9 @@ This is a simple **Flask-based machine learning web application** that predicts 
 [Click here view youtube video!](https://youtu.be/DlCdQ1MZXsc?si=ACw7zrwmCLGsYNVp)
 
 ## 🌐 Live Demo
-[Click here to try the app!](https://irismachinelearning.glitch.me/)
+[Click here to try the app!](https://helloworldirismachinelearning.onrender.com/)
 
 ## 📂 Project Links
-- **Glitch Project:** [Glitch Editor](https://glitch.com/edit/#!/irismachinelearning)
 - **GitHub Repository:** [GitHub](https://github.com/lovnishverma/helloworldirismachinelearning)
 
 ### **Additional Documentation**
